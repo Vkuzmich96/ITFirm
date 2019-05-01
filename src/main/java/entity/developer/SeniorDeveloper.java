@@ -4,11 +4,11 @@ import entity.Employee;
 import entity.Position;
 import entity.Salary;
 
-public class JuniorDeveloper extends Employee {
-
-    public JuniorDeveloper(String name, int experience) {
-        super(Salary.JUNIOR_DEVELOPER_SALARY, Position.JUNIOR, name, experience);
+public class SeniorDeveloper extends Employee {
+    public SeniorDeveloper(String name, int experience) {
+        super(Salary.SENIOR_DEVELOPER_SALARY, Position.SENIOR, name, experience);
     }
+
 
     @Override
     public boolean equals(Object o) {

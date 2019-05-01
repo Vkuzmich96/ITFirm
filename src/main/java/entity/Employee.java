@@ -1,30 +1,50 @@
 package entity;
 
+
 import java.util.Objects;
 
 public abstract class Employee {
-    private String salary;
-    private String position;
-    public abstract void work();
+    private String name;
+    private int experience;
+    private Salary salary;
+    private Position position;
 
-    public Employee(String salary, String position) {
+    public Employee(Salary salary, Position position, String name, int  experience) {
         this.salary = salary;
         this.position = position;
+        this.name = name;
+        this.experience = experience;
     }
 
-    private String getSalary() {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getExperience() {
+        return experience;
+    }
+
+    public void setExperience(int experience) {
+        this.experience = experience;
+    }
+
+    public Salary getSalary() {
         return salary;
     }
 
-    private String getPosition() {
-        return position;
-    }
-
-    public void setSalary(String salary) {
+    public void setSalary(Salary salary) {
         this.salary = salary;
     }
 
-    public void setPosition(String position) {
+    public Position getPosition() {
+        return position;
+    }
+
+    public void setPosition(Position position) {
         this.position = position;
     }
 
@@ -33,20 +53,14 @@ public abstract class Employee {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
-        return Objects.equals(salary, employee.salary) &&
-                Objects.equals(position, employee.position);
+        return experience == employee.experience &&
+                salary == employee.salary &&
+                Objects.equals(name, employee.name) &&
+                position == employee.position;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(salary, position);
-    }
-
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "salary='" + salary + '\'' +
-                ", position='" + position + '\'' +
-                '}';
+        return Objects.hash(name, experience, salary, position);
     }
 }

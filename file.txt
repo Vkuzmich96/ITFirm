@@ -1,0 +1,7 @@
+juniorDeveloper;Vasya;1
+juniorDeveloper;Petya;1
+juniorDeveloper;Sergei;1
+juniorDeveloper;Sanya;1
+middleDeveloper;Max;2
+middleDeveloper;Stepan;2
+seniorDeveloper;Misha;5

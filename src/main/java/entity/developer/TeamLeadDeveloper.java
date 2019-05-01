@@ -4,10 +4,9 @@ import entity.Employee;
 import entity.Position;
 import entity.Salary;
 
-public class JuniorDeveloper extends Employee {
-
-    public JuniorDeveloper(String name, int experience) {
-        super(Salary.JUNIOR_DEVELOPER_SALARY, Position.JUNIOR, name, experience);
+public class TeamLeadDeveloper extends Employee {
+    public TeamLeadDeveloper(String name, int experience) {
+        super(Salary.TEAM_LEAD_DEVELOPER_SALARY, Position.TEAM_LEAD, name, experience);
     }
 
     @Override

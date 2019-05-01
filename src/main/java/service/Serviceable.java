@@ -2,7 +2,7 @@ package service;
 
 public interface Serviceable {
     boolean addEmployee();
-    boolean makeTeam();
+    boolean createTeam();
     String getEmployee();
     String getTeam();
 }
