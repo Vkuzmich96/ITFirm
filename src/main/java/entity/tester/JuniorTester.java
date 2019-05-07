@@ -1,11 +1,11 @@
-package entity.developer;
+package entity.tester;
 
 import entity.Position;
 
-public class JuniorDeveloper extends Developer {
+public class JuniorTester extends Tester {
 
-    public JuniorDeveloper(String name, int experience, int Salary, String language, int id) {
-        super(Salary, Position.JUNIOR, name, experience, language, id);
+    public JuniorTester(String name, int experience, int salary, TestingKind testingKind, int id) {
+        super(salary, Position.JUNIOR, name, experience, testingKind, id);
     }
 
     @Override
@@ -20,7 +20,7 @@ public class JuniorDeveloper extends Developer {
 
     @Override
     public String toString() {
-        return  "JuniorDeveloper{ " + '\'' +
+        return  "JuniorTester{ " + '\'' +
                 super.toString() +
                 " }"
                 ;

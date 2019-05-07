@@ -2,12 +2,11 @@ package entity.developer;
 
 import entity.Employee;
 import entity.Position;
-import entity.Salary;
 
-public class MiddleDeveloper extends Employee {
+public class MiddleDeveloper extends Developer {
 
-    public MiddleDeveloper(String name, int experience) {
-        super(Salary.MIDDLE_DEVELOPER_SALARY, Position.MIDDLE, name, experience);
+    public MiddleDeveloper(String name, int experience, int Salary, String language, int id) {
+        super(Salary, Position.MIDDLE, name, experience, language, id);
     }
 
     @Override
@@ -20,4 +19,11 @@ public class MiddleDeveloper extends Employee {
         return super.hashCode();
     }
 
+    @Override
+    public String toString() {
+        return  "MiddleDeveloper{ " + '\'' +
+                super.toString() +
+                " }"
+                ;
+    }
 }

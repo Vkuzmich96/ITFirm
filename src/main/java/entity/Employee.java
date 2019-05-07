@@ -4,17 +4,22 @@ package entity;
 import java.util.Objects;
 
 public abstract class Employee {
+    private int id;
     private String name;
     private int experience;
-    private Salary salary;
+    private int salary;
     private Position position;
+    private Kind kind;
 
-    public Employee(Salary salary, Position position, String name, int  experience) {
+    public Employee(int salary, Position position, String name, int  experience, Kind kind, int id) {
         this.salary = salary;
         this.position = position;
         this.name = name;
         this.experience = experience;
+        this.id = id;
+        this.kind =kind;
     }
+
 
     public String getName() {
         return name;
@@ -32,11 +37,11 @@ public abstract class Employee {
         this.experience = experience;
     }
 
-    public Salary getSalary() {
+    public int getSalary() {
         return salary;
     }
 
-    public void setSalary(Salary salary) {
+    public void setSalary(int salary) {
         this.salary = salary;
     }
 
@@ -48,19 +53,42 @@ public abstract class Employee {
         this.position = position;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Kind getKind() {
+        return kind;
+    }
+
+    public void setKind(Kind kind) {
+        this.kind = kind;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
-        return experience == employee.experience &&
-                salary == employee.salary &&
-                Objects.equals(name, employee.name) &&
-                position == employee.position;
+        return id == employee.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, experience, salary, position);
+        return Objects.hash(id, name, experience, salary, position, kind);
+    }
+
+    @Override
+    public String toString() {
+        return  "id=" + id +
+                ", name='" + name + '\'' +
+                ", experience=" + experience +
+                ", salary=" + salary +
+                ", position=" + position +
+                ", kind=" + kind;
     }
 }

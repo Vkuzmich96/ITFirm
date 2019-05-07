@@ -1,0 +1,3 @@
+developer;junior;java;Vasya;1;350
+developer;junior;java;Petya;1;300
+developer;junior;java;Sergei;1;320

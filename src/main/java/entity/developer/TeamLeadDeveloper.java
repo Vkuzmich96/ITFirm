@@ -1,12 +1,10 @@
 package entity.developer;
 
-import entity.Employee;
 import entity.Position;
-import entity.Salary;
 
-public class TeamLeadDeveloper extends Employee {
-    public TeamLeadDeveloper(String name, int experience) {
-        super(Salary.TEAM_LEAD_DEVELOPER_SALARY, Position.TEAM_LEAD, name, experience);
+public class TeamLeadDeveloper extends Developer {
+    public TeamLeadDeveloper(String name, int experience, int Salary, String language, int id) {
+        super(Salary, Position.TEAM_LEAD, name, experience, language, id);
     }
 
     @Override
@@ -17,5 +15,13 @@ public class TeamLeadDeveloper extends Employee {
     @Override
     public int hashCode() {
         return super.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return  "TeamLeadDeveloper{ " + '\'' +
+                super.toString() +
+                " }"
+                ;
     }
 }

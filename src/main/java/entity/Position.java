@@ -2,7 +2,7 @@ package entity;
 
 public enum Position {
 
-    JUNIOR("junior"), MIDDLE("middle"), SENIOR("senior"), TEAM_LEAD("teamLead"), MANAGER("manager");
+    JUNIOR("junior"), MIDDLE("middle"), SENIOR("senior"), TEAM_LEAD("lead");
 
     String positionName;
 
