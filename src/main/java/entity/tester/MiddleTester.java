@@ -8,6 +8,10 @@ public class MiddleTester extends Tester {
         super(Salary, Position.MIDDLE, name, experience, testingKind, id);
     }
 
+    public MiddleTester() {
+        super(Position.MIDDLE);
+    }
+
     @Override
     public boolean equals(Object o) {
         return super.equals(o);

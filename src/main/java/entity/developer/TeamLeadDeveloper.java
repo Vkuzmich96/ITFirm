@@ -7,6 +7,10 @@ public class TeamLeadDeveloper extends Developer {
         super(Salary, Position.TEAM_LEAD, name, experience, language, id);
     }
 
+    public TeamLeadDeveloper() {
+        super(Position.TEAM_LEAD);
+    }
+
     @Override
     public boolean equals(Object o) {
         return super.equals(o);

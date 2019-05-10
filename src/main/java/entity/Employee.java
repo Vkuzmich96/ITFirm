@@ -20,6 +20,10 @@ public abstract class Employee {
         this.kind =kind;
     }
 
+    public Employee(Kind kind, Position position) {
+        this.kind = kind;
+        this.position = position;
+    }
 
     public String getName() {
         return name;

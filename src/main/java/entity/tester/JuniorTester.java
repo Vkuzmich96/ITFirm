@@ -8,6 +8,10 @@ public class JuniorTester extends Tester {
         super(salary, Position.JUNIOR, name, experience, testingKind, id);
     }
 
+    public JuniorTester() {
+        super(Position.JUNIOR);
+    }
+
     @Override
     public boolean equals(Object o) {
         return super.equals(o);

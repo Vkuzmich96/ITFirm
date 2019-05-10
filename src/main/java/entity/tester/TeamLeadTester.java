@@ -8,6 +8,10 @@ public class TeamLeadTester extends Tester {
         super(Salary, Position.TEAM_LEAD, name, experience, testingKind, id);
     }
 
+    public TeamLeadTester() {
+        super(Position.TEAM_LEAD);
+    }
+
     @Override
     public boolean equals(Object o) {
         return super.equals(o);

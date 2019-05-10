@@ -7,6 +7,9 @@ public class SeniorDeveloper extends Developer {
         super(Salary, Position.SENIOR, name, experience, language, id);
     }
 
+    public SeniorDeveloper() {
+        super(Position.SENIOR);
+    }
 
     @Override
     public boolean equals(Object o) {

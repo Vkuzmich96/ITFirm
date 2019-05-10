@@ -8,6 +8,10 @@ public class JuniorDeveloper extends Developer {
         super(Salary, Position.JUNIOR, name, experience, language, id);
     }
 
+    public JuniorDeveloper() {
+        super(Position.JUNIOR);
+    }
+
     @Override
     public boolean equals(Object o) {
         return super.equals(o);

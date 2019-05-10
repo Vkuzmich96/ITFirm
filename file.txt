@@ -6,4 +6,5 @@ developer;middle;java;Max;2;1000
 developer;middle;java;Stepan;2;1100
 developer;senior;java;Misha;5;2500
 tester;junior;hand;Nikita;1;200
-
+tester;junior;hand;Semion;1;210
+developer;lead;java;Misha;8;5000

@@ -11,6 +11,10 @@ public abstract class Tester extends Employee {
         this.testingKind = testingKind;
     }
 
+    public Tester(Position position) {
+        super(Kind.TESTER, position);
+    }
+
     public TestingKind getTestingKind() {
         return testingKind;
     }

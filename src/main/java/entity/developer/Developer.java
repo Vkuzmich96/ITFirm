@@ -12,6 +12,10 @@ public abstract class Developer extends Employee {
         this.language = language;
     }
 
+    public Developer(Position position) {
+        super(Kind.DEVELOPER, position);
+    }
+
     public String getLanguage() {
         return language;
     }
