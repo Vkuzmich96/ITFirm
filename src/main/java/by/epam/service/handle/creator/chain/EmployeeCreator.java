@@ -12,7 +12,8 @@ public abstract class EmployeeCreator implements CreatorChain<Employee> {
 
     @Override
     public CreatorChain<Employee> linkWith(CreatorChain<Employee> next){
-        return ((EmployeeCreator) next).next = this;
+        ((EmployeeCreator) next).next = this;
+        return next;
     }
 
     protected Employee nextParse(String[] strings) throws ServiceException {

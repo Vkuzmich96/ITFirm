@@ -26,9 +26,9 @@ public class CreatorFactory {
     }
 
     private CreatorChain<Employee> createEmployeeCreator(){
-        return new DeveloperCreator()
-                   .linkWith(new TesterCreator())
-                   .linkWith(new InvalidDataCase());
+        return new InvalidDataCase()
+                .linkWith(new TesterCreator())
+                .linkWith(new DeveloperCreator());
     }
 
 }

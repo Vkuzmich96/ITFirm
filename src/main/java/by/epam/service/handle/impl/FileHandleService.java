@@ -5,6 +5,7 @@ import by.epam.service.ServiceException;
 import by.epam.service.handle.Handler;
 import by.epam.service.handle.creator.Creator;
 import by.epam.service.handle.creator.EmployeeDirector;
+import by.epam.service.handle.creator.chain.CreatorChain;
 import by.epam.service.handle.parser.Parser;
 import by.epam.service.handle.validator.ValidationResult;
 import by.epam.service.handle.validator.Validator;
@@ -15,6 +16,7 @@ import java.util.List;
 public class FileHandleService implements Handler {
     private Parser parser;
     private Validator validator;
+    private CreatorChain<Employee> cr;
     private Creator creator;
     private EmployeeDirector director;
     private final int KIND_EMPLOYEE_ARGUMENT = 0;
