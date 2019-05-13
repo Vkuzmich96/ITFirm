@@ -8,14 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeRepository implements Repository<Employee> {
-
+    private static final EmployeeRepository employeeRepository = new EmployeeRepository();
     private List<Employee> repository = new ArrayList<>();
 
     private EmployeeRepository(){
     }
 
     public static EmployeeRepository getInstance(){
-        return EmployeeRepository.SingletoneHolder.employeeRepository;
+        return employeeRepository;
     }
 
     @Override
@@ -42,13 +42,6 @@ public class EmployeeRepository implements Repository<Employee> {
             }
         }
         return employeeList;
-    }
-
-    private static class SingletoneHolder {
-        private static EmployeeRepository employeeRepository;
-        static {
-            employeeRepository = new EmployeeRepository();
-        }
     }
 
     @Override

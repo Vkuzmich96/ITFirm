@@ -12,14 +12,6 @@ public class Team {
         teamID = UUID.randomUUID().toString();
     }
 
-    public int getManHours(){
-        int value = 0;
-        for (Employee employee: employees){
-            value+= employee.getSalary();
-        }
-        return value;
-    }
-
     public String getTeamID() {
         return teamID;
     }

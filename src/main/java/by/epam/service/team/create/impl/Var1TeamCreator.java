@@ -1,24 +1,23 @@
-package by.epam.service.team.ext;
+package by.epam.service.team.create.impl;
 
 import by.epam.entity.Employee;
 import by.epam.entity.Kind;
 import by.epam.entity.Position;
 import by.epam.entity.Team;
-import by.epam.service.find.RepositoryFinder;
+import by.epam.service.find.Finder;
 import by.epam.service.sort.sorter.Sorter;
-import by.epam.service.team.TeamCreator;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Var1TeamCreator extends TeamCreator {
+public class Var1TeamCreator extends TeamCreatorAbstract {
 
     private final int JUNIOR_DEVELOPER_QUANTITY = 2;
     private final int MIDDLE_DEVELOPER_QUANTITY = 2;
     private final int LEAD_DEVELOPER_QUANTITY = 1;
     private final int JUNIOR_TESTER_QUANTITY = 2;
 
-    public Var1TeamCreator(RepositoryFinder finder, Sorter sorter) {
+    public Var1TeamCreator(Finder finder, Sorter sorter) {
         super(finder, sorter);
     }
 

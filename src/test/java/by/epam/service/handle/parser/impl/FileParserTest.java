@@ -19,7 +19,7 @@ public class FileParserTest {
         } catch (ServiceException e) {
             e.printStackTrace();
         }
-        int expected = 3;
+        int expected = 11;
         Assert.assertEquals(actual,expected);
     }
 

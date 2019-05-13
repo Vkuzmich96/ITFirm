@@ -3,35 +3,41 @@ package by.epam.service;
 import by.epam.entity.Employee;
 import by.epam.entity.Team;
 import by.epam.repository.Repository;
-import by.epam.service.find.RepositoryFinder;
+import by.epam.service.find.Finder;
 import by.epam.service.handle.Handler;
 import by.epam.service.sort.comparator.ExperienceComparator;
 import by.epam.service.sort.comparator.SalaryComparator;
 import by.epam.service.sort.sorter.Sorter;
-import by.epam.service.team.TeamDirector;
-import by.epam.service.team.TeamKey;
+import by.epam.service.team.count.Counter;
+import by.epam.service.team.create.TeamCreator;
 
 import java.util.List;
 
 public class GeneralService implements Service {
 
-    private RepositoryFinder finder;
+    private Finder finder;
     private Handler handler;
     private Sorter sorter;
-    private TeamDirector director;
+    private TeamCreator creator;
     private Repository repository;
+    private Counter counter;
 
-    public GeneralService(RepositoryFinder finder, Handler handler, Sorter sorter, TeamDirector director, Repository repository) {
+    public GeneralService(Finder finder, Handler handler, Sorter sorter, TeamCreator creator, Repository repository, Counter counter) {
         this.finder = finder;
         this.handler = handler;
         this.sorter = sorter;
-        this.director = director;
+        this.creator = creator;
         this.repository = repository;
+        this.counter = counter;
     }
 
     @Override
-    public List<Employee> find(String from, String until) {
-        return finder.find(Integer.parseInt(from), Integer.parseInt(until));
+    public List<Employee> find(String from, String until) throws ServiceException {
+        try {
+            return finder.find(Integer.parseInt(from), Integer.parseInt(until));
+        }catch (NumberFormatException e){
+            throw new ServiceException("wrong type of entered arguments", e);
+        }
     }
 
     @Override
@@ -54,7 +60,7 @@ public class GeneralService implements Service {
 
     @Override
     public String create() {
-        Team team = director.direct(TeamKey.VAR_1).create();
-        return team.toString()+ '\n' + "Man hours" + team.getManHours();
+        Team team = creator.create();
+        return team.toString()+ '\n' + "Man hours" + counter.count(team.getEmployees());
     }
 }

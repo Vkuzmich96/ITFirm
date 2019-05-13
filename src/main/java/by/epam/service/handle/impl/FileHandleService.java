@@ -3,8 +3,6 @@ package by.epam.service.handle.impl;
 import by.epam.entity.Employee;
 import by.epam.service.ServiceException;
 import by.epam.service.handle.Handler;
-import by.epam.service.handle.creator.Creator;
-import by.epam.service.handle.creator.EmployeeDirector;
 import by.epam.service.handle.creator.chain.CreatorChain;
 import by.epam.service.handle.parser.Parser;
 import by.epam.service.handle.validator.ValidationResult;
@@ -16,15 +14,12 @@ import java.util.List;
 public class FileHandleService implements Handler {
     private Parser parser;
     private Validator validator;
-    private CreatorChain<Employee> cr;
-    private Creator creator;
-    private EmployeeDirector director;
-    private final int KIND_EMPLOYEE_ARGUMENT = 0;
+    private CreatorChain<Employee> creator;
 
-    public FileHandleService(Parser parser, Validator validator, EmployeeDirector director) {
+    public FileHandleService(Parser parser, Validator validator, CreatorChain<Employee> creator) {
         this.parser = parser;
         this.validator = validator;
-        this.director = director;
+        this.creator = creator;
     }
 
     @Override
@@ -35,7 +30,7 @@ public class FileHandleService implements Handler {
         if (result.isValid()){
             employees = transform(stringList);
         } else {
-            employees =  new ArrayList<>();
+            throw new ServiceException("file is invalid" + result.toString());
         }
         return employees;
     }
@@ -43,7 +38,6 @@ public class FileHandleService implements Handler {
     private List<Employee> transform( List<String[]> stringList) throws ServiceException {
         List<Employee> employees = new ArrayList<>();
         for (String[] strings: stringList){
-            creator = director.direct(strings[KIND_EMPLOYEE_ARGUMENT]);
             employees.add(creator.create(strings));
         }
         return employees;

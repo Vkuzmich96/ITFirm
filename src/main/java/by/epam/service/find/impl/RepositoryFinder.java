@@ -1,16 +1,17 @@
-package by.epam.service.find;
+package by.epam.service.find.impl;
 
 import by.epam.entity.Employee;
 import by.epam.entity.Kind;
 import by.epam.entity.Position;
 import by.epam.repository.Repository;
+import by.epam.service.find.Finder;
 import by.epam.service.find.specification.impl.FindByKindAndPositionSpecification;
 import by.epam.service.find.specification.impl.FindByKindSpecification;
 import by.epam.service.find.specification.impl.FindBySalarySpecification;
 import java.util.List;
 
 
-public class RepositoryFinder {
+public class RepositoryFinder implements Finder {
     private Repository repository;
 
     public RepositoryFinder(Repository repository){
